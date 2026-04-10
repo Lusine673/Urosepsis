@@ -117,14 +117,14 @@ st.markdown("""
 # ============================================================
 st.markdown("""
 <div class="main-header">
-    <h1>🩺 Прогнозирование риска развития пиелонефрита при беременности</h1>
+    <h1>Прогнозирование гестационного пиелонефрита</h1>
 </div>
 """, unsafe_allow_html=True)
 
 # ============================================================
 # БЛОК АБСОЛЮТНЫХ ФАКТОРОВ РИСКА
 # ============================================================
-st.markdown("### ⚠️ Шаг 1: Проверка абсолютных факторов риска")
+st.markdown("### Шаг 1: Проверка абсолютных факторов риска")
 
 st.markdown("""
 <div class="warning-box">
@@ -168,13 +168,13 @@ has_absolute_risk = (chronic_pyelonephritis == "Да" or
 if has_absolute_risk:
     st.markdown("""
     <div class="result-box result-absolute">
-        <h2 style="margin:0 0 0.5rem 0;">🚨 ВЫСОКИЙ РИСК</h2>
+        <h2 style="margin:0 0 0.5rem 0;"ВЫСОКИЙ РИСК</h2>
         <p style="margin:0;">Выявлен абсолютный фактор риска развития пиелонефрита.<br>
         Дальнейший расчёт не требуется.</p>
     </div>
     """, unsafe_allow_html=True)
     
-    st.markdown("#### 📋 Рекомендации")
+    st.markdown("#### Рекомендации")
     st.markdown("""
     <div class="recommendations-card recommendations-card-high">
         <ul>
@@ -193,7 +193,7 @@ else:
     # БЛОК РАСЧЁТА (если нет абсолютных факторов)
     # ============================================================
     st.markdown("---")
-    st.markdown("### 📊 Шаг 2: Расчёт индивидуального риска")
+    st.markdown("### Шаг 2: Расчёт индивидуального риска")
     
     st.markdown("""
     <div class="info-box">
@@ -232,7 +232,7 @@ else:
     # ============================================================
     # КНОПКА РАСЧЁТА
     # ============================================================
-    if st.button("🔬 Рассчитать риск", type="primary", use_container_width=True):
+    if st.button("Рассчитать риск", type="primary", use_container_width=True):
         
         # Преобразование в числовые значения
         x_age = 1 if age_under_25 == "Да" else 0
@@ -282,7 +282,7 @@ else:
         """, unsafe_allow_html=True)
         
         # --- Детализация факторов ---
-        st.markdown("#### 📈 Вклад факторов риска")
+        st.markdown("#### Вклад факторов риска")
         
         factors_data = []
         if x_age == 1:
@@ -313,7 +313,7 @@ else:
         st.markdown(table_html, unsafe_allow_html=True)
         
         # --- Рекомендации ---
-        st.markdown("#### 📋 Рекомендации")
+        st.markdown("#### Рекомендации")
         
         if probability >= threshold:
             st.markdown("""
@@ -345,7 +345,7 @@ else:
 # ============================================================
 st.markdown("---")
 
-with st.expander("ℹ️ Информация о модели"):
+with st.expander("Информация о модели"):
     st.markdown("""
     ### Характеристики прогностической модели
     
